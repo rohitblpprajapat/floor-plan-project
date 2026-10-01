@@ -1,0 +1,75 @@
+# configs/laptop.yaml
+# Profile configuration for HP Pavilion Gaming Laptop (Ryzen 5 5600H, GTX 1650 4GB, WSL2 3.5GB RAM)
+
+profile: laptop
+version: "1.0.0"
+
+system:
+  host_cpu: "AMD Ryzen 5 5600H (6 cores, 12 threads)"
+  gpu_model: "NVIDIA GeForce GTX 1650"
+  gpu_vram_mib: 4096
+  wsl_memory_limit_gib: 3.5
+  wsl_swap_limit_gib: 1.0
+
+concurrency:
+  max_gpu_jobs: 1
+  max_cpu_jobs: 2
+  worker_cpu_threads: 6
+
+process_management:
+  cooperative_grace_period_seconds: 5.0
+  heartbeat_interval_seconds: 15.0
+  max_heartbeat_silence_seconds: 60.0
+
+timeouts:
+  default_seconds: 1800
+  stages:
+    smoke: 30
+    gpu_smoke: 30
+    fail_test: 30
+    ingest: 600
+    frames: 600
+    unpack: 600
+    features: 1200
+    sfm: 1800
+    sync: 600
+    align: 600
+
+stage_limits:
+  smoke:
+    max_concurrent: 2
+    cpu_threads: 2
+  gpu_smoke:
+    max_concurrent: 1
+    cpu_threads: 2
+  fail_test:
+    max_concurrent: 2
+    cpu_threads: 2
+  ingest:
+    max_concurrent: 1
+    cpu_threads: 4
+  frames:
+    max_concurrent: 1
+    cpu_threads: 4
+  unpack:
+    max_concurrent: 1
+    cpu_threads: 4
+  features:
+    max_concurrent: 1
+    cpu_threads: 6
+  sfm:
+    max_concurrent: 1
+    cpu_threads: 6
+  sync:
+    max_concurrent: 1
+    cpu_threads: 6
+  align:
+    max_concurrent: 1
+    cpu_threads: 4
+
+storage:
+  app_db_path: "data/app.sqlite3"
+  sessions_dir: "data/sessions"
+  runs_dir: "runs"
+  base_data_dir: "data"
+  mode: "reference"

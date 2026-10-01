@@ -1,0 +1,46 @@
+# configs/session.yaml
+# Session configuration and pilot frames extraction settings for session 20260910_172939
+
+session_id: "20260910_172939"
+profile: "laptop"
+stage: "frames"
+
+frames:
+  source_video: "data/2026-09-10/insta360_export_1789041643971.mp4"
+  source_asset_id: "asset_20260910_172939_insta360_export_1789041643971_mp4"
+  source_projection: "equirectangular_360"
+  target_width: 960
+  target_height: 960
+  fov_deg: 90.0
+  max_pilot_panoramas: 40
+  selection_policy: "contiguous_window"
+
+  masks:
+    enable_hardware_nadir: true
+    nadir_elevation_deg: -78.0
+    custom_polygons:
+      - id: "mask_seam_operator"
+        type: "operator"
+        provenance: "inspected_content_seam_boundary"
+        description: "Seam-crossing operator/hardware exclusion polygon at azimuth +-180 deg"
+        points:
+          - [0.97, 0.40]
+          - [1.00, 0.40]
+          - [1.00, 0.70]
+          - [0.97, 0.70]
+          - [0.00, 0.70]
+          - [0.03, 0.70]
+          - [0.03, 0.40]
+          - [0.00, 0.40]
+
+pycolmap:
+  camera_model: "PINHOLE"
+  rig_config_path: "rig_config.json"
+  single_camera_per_rig: false
+
+storage:
+  app_db_path: "data/app.sqlite3"
+  sessions_dir: "data/sessions"
+  runs_dir: "runs"
+  base_data_dir: "data"
+  mode: "reference"

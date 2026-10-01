@@ -1,0 +1,18 @@
+{
+  "metric_scale": 0.9208974003171453,
+  "trajectory_length_meters": 41.735070182372965,
+  "duration_seconds": 41.2,
+  "average_speed_mps": 1.0129871403488584,
+  "height_range_meters": 2.819442560647246,
+  "bounding_box_meters": {
+    "dx_meters": 5.551705645950964,
+    "dy_meters": 6.829241861018491,
+    "dz_meters": 2.819442560647246
+  },
+  "wall_segments_count": 16,
+  "gravity_alignment_angle_deg": 114.27037238799653,
+  "observability_passed": false,
+  "scale_stability_passed": false,
+  "scale_mean_across_windows": 0.18845768138601302,
+  "scale_std_across_windows": 0.05972172031738874
+}

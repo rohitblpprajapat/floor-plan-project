@@ -1,0 +1,102 @@
+{
+  "schema_version": "1.0.0",
+  "timestamp": "2026-09-16T15:39:30+05:30",
+  "toolchain": {
+    "python": {
+      "version": "3.11.16",
+      "executable": "/home/rohit/projects/insta360_mapper/.venv/bin/python",
+      "prefix": "/home/rohit/projects/insta360_mapper/.venv",
+      "is_virtual_env": true
+    },
+    "dependency_manager": {
+      "name": "uv",
+      "version": "0.12.15",
+      "lockfile": "uv.lock"
+    },
+    "system_tools": {
+      "ffmpeg": {
+        "path": "/usr/bin/ffmpeg",
+        "version": "ffmpeg version 8.0.1-3ubuntu2 Copyright (c) 2000-2025 the FFmpeg developers"
+      },
+      "ffprobe": {
+        "path": "/usr/bin/ffprobe",
+        "version": "ffprobe version 8.0.1-3ubuntu2 Copyright (c) 2007-2025 the FFmpeg developers"
+      }
+    },
+    "locked_packages": {
+      "pycolmap-cuda12": "4.2.0",
+      "gtsam": "4.2.2",
+      "numpy": "1.26.4",
+      "scipy": "1.17.1",
+      "opencv-python-headless": "4.11.0.86",
+      "pillow": "12.3.0",
+      "pydantic": "2.13.5",
+      "typer": "0.27.2",
+      "psutil": "7.2.2",
+      "pytest": "9.1.1",
+      "hatchling": "1.32.0",
+      "nvidia-cuda-runtime-cu12": "12.9.79",
+      "nvidia-curand-cu12": "10.3.10.19"
+    }
+  },
+  "gpu_environment": {
+    "device_name": "NVIDIA GeForce GTX 1650",
+    "driver_version": "581.83",
+    "vram_total_mib": 4096,
+    "dxg_device": "/dev/dxg",
+    "pycolmap_has_cuda": true,
+    "pycolmap_cuda_devices": 1,
+    "nvidia_smi_path": "/usr/lib/wsl/lib/nvidia-smi"
+  },
+  "test_evidence": {
+    "gtsam_optimizer": {
+      "status": "PASS",
+      "initial_translation": [1.2, -0.5, 0.8],
+      "optimized_translation": [1.2, -0.5, 0.8],
+      "error_norm": 0.0
+    },
+    "cuda_sift_extraction": {
+      "status": "PASS",
+      "requested_device": "Device.cuda",
+      "resolved_device": "Device.cuda",
+      "silent_cpu_fallback": false,
+      "keypoints_extracted": 1929,
+      "descriptor_shape": [1929, 128],
+      "elapsed_seconds": 0.3072,
+      "host_ram_delta_bytes": 88399872
+    },
+    "cpu_sift_fallback": {
+      "status": "PASS",
+      "requested_device": "Device.cpu",
+      "resolved_device": "Device.cpu",
+      "keypoints_extracted": 2030,
+      "descriptor_shape": [2030, 128],
+      "elapsed_seconds": 0.4089
+    },
+    "rig_transform_serialization": {
+      "status": "PASS",
+      "cameras_count": 2,
+      "json_roundtrip_rigs_count": 1,
+      "json_roundtrip_cams_count": 2
+    },
+    "video_decode_test": {
+      "status": "PASS",
+      "codec": "h264",
+      "dimensions": [64, 64],
+      "duration": "1.000000"
+    }
+  },
+  "capability_flags": {
+    "cuda_feature_extraction": true,
+    "cpu_feature_extraction_fallback": true,
+    "fixed_rig_supported": true,
+    "reconstruction_export_supported": true,
+    "undistortion_supported": true,
+    "dense_stereo_bindings_present": true,
+    "dense_stereo_tested": false,
+    "dense_stereo_qualification": "Dense-stereo bindings (patch_match_stereo, stereo_fusion) are verified present in PyCOLMAP symbols; actual GPU dense stereo computation is distinguished from SIFT and will be qualified in Prompt 09.",
+    "panorama_helpers_present": false,
+    "panorama_qualification": "Built-in panorama helpers absent in PyCOLMAP 4.2.0; will be handled by custom tested ray renderer in Prompt 05."
+  },
+  "verdict": "PASS"
+}

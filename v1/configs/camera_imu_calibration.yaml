@@ -1,0 +1,15 @@
+extrinsic_calibration:
+  R_CI:
+  - - 0.0
+    - 0.0
+    - 1.0
+  - - 1.0
+    - 0.0
+    - 0.0
+  - - 0.0
+    - 1.0
+    - 0.0
+  rms_residual_rad_s: 0.2815205040233171
+temporal_calibration:
+  clock_offset_sec: 0.9130889107458354
+  peak_correlation: 0.7121308699113013

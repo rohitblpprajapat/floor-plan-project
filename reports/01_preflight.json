@@ -1,0 +1,110 @@
+{
+  "schema_version": "1.0.0",
+  "timestamp": "2026-09-16T15:21:30+05:30",
+  "host": {
+    "os": "Windows 11 Home",
+    "os_version": "10.0.26200",
+    "build_number": "26200",
+    "model": "HP Pavilion Gaming Laptop PC 15-ec2xxx",
+    "cpu": "AMD Ryzen 5 5600H with Radeon Graphics",
+    "cpu_cores": 6,
+    "cpu_logical_threads": 12,
+    "total_physical_memory_bytes": 7887228928,
+    "total_physical_memory_gib": 7.345,
+    "volumes": [
+      {
+        "drive_letter": "C",
+        "filesystem": "NTFS",
+        "size_gb": 302.37,
+        "size_remaining_gb": 94.11,
+        "holds_wsl_vhd": true
+      },
+      {
+        "drive_letter": "D",
+        "filesystem": "NTFS",
+        "size_gb": 173.71,
+        "size_remaining_gb": 32.87,
+        "holds_wsl_vhd": false
+      }
+    ],
+    "wslconfig": {
+      "exists": false,
+      "modified": false,
+      "path": "$env:USERPROFILE\\.wslconfig"
+    }
+  },
+  "gpu": {
+    "model": "NVIDIA GeForce GTX 1650",
+    "total_vram_mib": 4096,
+    "windows_driver_version": "581.83",
+    "nvidia_smi_cuda_version": "13.0",
+    "driver_model": "WDDM",
+    "cuda_toolkit_installed": false,
+    "cuda_note": "NVIDIA-SMI displayed CUDA version (13.0) represents driver capability headroom, not proof of installed CUDA toolkit or runtime application."
+  },
+  "wsl": {
+    "wsl_version": "2.7.13.0",
+    "kernel_version": "6.18.33.2-2",
+    "wslg_version": "1.0.73.2",
+    "default_distro": "Ubuntu",
+    "default_version": 2,
+    "distro_details": {
+      "name": "Ubuntu",
+      "os": "Ubuntu 26.04 LTS (Resolute Raccoon)",
+      "architecture": "x86_64",
+      "kernel": "6.18.33.2-microsoft-standard-WSL2",
+      "nproc": 12,
+      "ram_total_gib": 3.5,
+      "swap_total_gib": 1.0,
+      "vhd_path": "C:\\Users\\rohit\\AppData\\Local\\wsl\\{c1c5033f-f3df-4c61-8242-581d9c01e245}\\ext4.vhdx",
+      "vhd_file_size_bytes": 5857345536,
+      "dxg_device_present": true,
+      "dxg_path": "/dev/dxg",
+      "nvidia_smi_path": "/usr/lib/wsl/lib/nvidia-smi",
+      "workspace_proposed_path": "/home/rohit/projects/insta360_mapper",
+      "workspace_filesystem_type": "ext4"
+    }
+  },
+  "diagnostics_summary": {
+    "windows_commands": {
+      "Get-CimInstance Win32_OperatingSystem": 0,
+      "Get-CimInstance Win32_ComputerSystem": 0,
+      "Get-CimInstance Win32_Processor": 0,
+      "Get-Volume": 0,
+      "wsl.exe --version": 0,
+      "wsl.exe --status": 0,
+      "wsl.exe --list --verbose": 0,
+      "nvidia-smi.exe": 0
+    },
+    "wsl_commands": {
+      "uname -a": 0,
+      "uname -m": 0,
+      "cat /etc/os-release": 0,
+      "free -h": 0,
+      "/sbin/swapon --show": 0,
+      "df -h": 0,
+      "nproc": 0,
+      "/usr/lib/wsl/lib/nvidia-smi": 0
+    },
+    "write_checks": {
+      "windows_workspace_write": "PASSED",
+      "wsl_project_dir_write": "PASSED"
+    }
+  },
+  "resource_proposal": {
+    "host_ram_gib": 7.35,
+    "wsl_ram_limit_gib": 3.5,
+    "wsl_swap_gib": 1.0,
+    "windows_remaining_ram_budget_gib": 3.85,
+    "action_taken": "Preserve existing default dynamic allocation without modification",
+    "rationale": "On an 8 GB host, assigning >4 GB RAM to WSL risks starving Windows host processes, leading to excessive paging. 3.5 GiB RAM + 1.0 GiB swap provides balanced capacity for headless reconstruction jobs while preserving host stability."
+  },
+  "status_separation": {
+    "software_status": "Stage 01 Preflight Complete",
+    "actual_data_status": "Input Datasets Available Locally",
+    "scale_status": "Metric Calibration Not Initialized"
+  },
+  "verdict": "HOST_PASS",
+  "can_prompt_02_run": true,
+  "stop_condition_met": true
+}
